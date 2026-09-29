@@ -1,0 +1,193 @@
+.equipe {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #161C28 0%, #2A303C 100%);
+    min-height: 100vh;
+}
+
+.equipe-titulo {
+    color: var(--cyan);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(123, 245, 255, 0.3);
+}
+
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.profile-card {
+    background: linear-gradient(135deg, #2A303C 0%, #161C28 100%);
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(123, 245, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    border-color: rgba(123, 245, 255, 0.3);
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #00DAEB;
+    box-shadow: 0 0 20px rgba(0, 218, 235, 0.3);
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    color: #7BF5FF;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(123, 245, 255, 0.3);
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00DAEB, #7BF5FF, #00A2AC);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #5148D7 0%, #3829C0 100%);
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(81, 72, 215, 0.4);
+}
+
+.social-links a:hover {
+    background: linear-gradient(135deg, #6A63F1 0%, #5148D7 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(106, 99, 241, 0.6);
+}
+
+.professora-card {
+    background: linear-gradient(135deg, #2A303C 0%, #161C28 100%);
+    max-width: 420px;
+    margin: 0 auto 50px;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(106, 99, 241, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(81, 72, 215, 0.15);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.professora-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 35px rgba(106, 99, 241, 0.3);
+}
+
+.professora-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #5148D7 0%, #3829C0 100%);
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(81, 72, 215, 0.4);
+}
+
+.professora-card .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #5148D7;
+    box-shadow: 0 0 20px rgba(81, 72, 215, 0.35);
+    margin-bottom: 20px;
+}
+
+.professora-card .profile-name {
+    color: #7BF5FF;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(123, 245, 255, 0.3);
+}
+
+.profile-turma {
+    color: #ffffff;
+    opacity: 0.85;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.professora-card .divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #5148D7, #6A63F1, #5148D7);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.professora-card .profile-desc {
+    color: #7BF5FF;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+.equipe-separador {
+    border: none;
+    height: 1px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: linear-gradient(90deg, transparent, rgba(123, 245, 255, 0.3), transparent);
+}
+
+.equipe-subtitulo {
+    color: #7BF5FF;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}

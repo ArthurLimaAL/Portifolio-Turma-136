@@ -1,0 +1,118 @@
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(6, 24, 39, .9);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 45%, rgba(0, 174, 255, .18), transparent 30%),
+        linear-gradient(135deg, #061827 0%, #082b43 100%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr .9fr;
+    gap: 0px;
+}
+
+.tag,
+.section-title>span {
+    color: var(--cyan);
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 18px 0;
+    font: 700 clamp(3.3rem, 7vw, 6rem)/.95 'Space Grotesk';
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero-text>p {
+    max-width: 600px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.primary {
+    background: var(--cyan);
+    color: #03131e;
+}
+
+.secondary {
+    border: 1px solid var(--line);
+    color: var(--white);
+}
+
+.mascot-area {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 480px;
+}
+
+.mascot {
+    position: relative;
+    width: min(430px, 100%);
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .35));
+    animation: float 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.glow {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: rgba(36, 201, 255, .15);
+    filter: blur(50px);
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .mascot-area {
+        min-height: 350px;
+    }
+}

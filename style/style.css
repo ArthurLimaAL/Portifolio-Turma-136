@@ -1,0 +1,29 @@
+:root {
+    --navy: #061827;
+    --navy-2: #0a2438;
+    --blue: #078bd0;
+    --cyan: #24c9ff;
+    --white: #f5fbff;
+    --muted: #9db0bd;
+    --line: rgba(95, 180, 220, .16);
+    --yellow: #ffd429;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+}

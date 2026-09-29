@@ -1,0 +1,69 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+/* Só o header fica mais espremido nas bordas */
+.header .container {
+    width: min(1600px, 95%);
+}
+
+.nav {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: white;
+}
+
+.brand strong {
+    display: block;
+    font-family: 'Space Grotesk';
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+}
+
+.brand span {
+    color: var(--muted);
+    font-size: .72rem;
+}
+
+nav {
+    display: flex;
+    gap: 26px;
+}
+
+nav a {
+    color: #cbd9e1;
+    font-size: 1.3rem;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+@media (max-width: 800px) {
+    nav {
+        display: none;
+    }
+}
