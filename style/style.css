@@ -1,29 +1,43 @@
 :root {
-    --navy: #061827;
-    --navy-2: #0a2438;
-    --blue: #078bd0;
-    --cyan: #24c9ff;
-    --white: #f5fbff;
-    --muted: #9db0bd;
-    --line: rgba(95, 180, 220, .16);
-    --yellow: #ffd429;
+  --navy: #061827;
+  --navy-2: #0a2438;
+  --blue: #078bd0;
+  --cyan: #24c9ff;
+  --white: #f5fbff;
+  --muted: #9db0bd;
+  --line: rgba(95, 180, 220, 0.16);
+  --yellow: #ffd429;
+
+  --rosa-vivo: #f2055c;
+  --rosa-claro: #f25cbe;
+  --roxo-magenta: #bf04a0;
+  --roxo-escuro: #2a1459;
+
+  /* Apoio - mantive seu fundo escuro mas já em variável */
+  --bg-escuro-1: #161c28;
+  --bg-escuro-2: #2a303c;
+
+  /* RGB para usar em sombras com opacidade */
+  --rosa-vivo-rgb: 242, 5, 92;
+  --rosa-claro-rgb: 242, 92, 190;
+  --roxo-magenta-rgb: 191, 4, 160;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 100px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 100px;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: var(--navy);
-    color: var(--white);
-    line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
 }
