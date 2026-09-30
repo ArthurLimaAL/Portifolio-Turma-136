@@ -1,6 +1,6 @@
 :root {
-  --navy: #061827;
-  --navy-2: #0a2438;
+  --navy: #161c28;
+  --navy-2: #2a303c;
   --blue: #078bd0;
   --cyan: #24c9ff;
   --white: #f5fbff;
@@ -13,9 +13,10 @@
   --roxo-magenta: #bf04a0;
   --roxo-escuro: #2a1459;
 
-  /* Apoio - mantive seu fundo escuro mas já em variável */
+  /* Apoio - Fundo padrão unificado para o projeto */
   --bg-escuro-1: #161c28;
   --bg-escuro-2: #2a303c;
+  --bg-gradiente: linear-gradient(135deg, #161c28 0%, #2a303c 100%);
 
   /* RGB para usar em sombras com opacidade */
   --rosa-vivo-rgb: 242, 5, 92;
@@ -37,7 +38,9 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  background: var(--navy);
+  background: linear-gradient(135deg, #161c28 0%, #2a303c 100%) no-repeat fixed;
+  background-size: cover;
   color: var(--white);
   line-height: 1.6;
+  min-height: 100vh;
 }

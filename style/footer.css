@@ -4,9 +4,9 @@
 }
 
 .footer {
-    background-color: #2A303C;
+    background-color: rgba(22, 28, 40, 0.6);
     color: #cbd5e1;
-    border-top: 1px solid rgba(51, 65, 85, 0.4);
+    border-top: 1px solid rgba(123, 245, 255, 0.1);
     padding-top: 1.25rem;
     padding-bottom: 0.75rem;
     padding-left: 1rem;

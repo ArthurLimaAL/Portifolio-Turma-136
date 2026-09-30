@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(6, 24, 39, .9);
+    background: rgba(22, 28, 40, .85);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--line);
 }
@@ -15,8 +15,7 @@
     align-items: center;
     overflow: hidden;
     background:
-        radial-gradient(circle at 80% 45%, rgba(0, 174, 255, .18), transparent 30%),
-        linear-gradient(135deg, #061827 0%, #082b43 100%);
+        radial-gradient(circle at 80% 45%, rgba(0, 174, 255, .18), transparent 30%);
 }
 
 .hero-content {
