@@ -1,11 +1,9 @@
 .curso {
   padding: 80px 20px;
   background:
-    radial-gradient(
-      circle at 15% 10%,
+    radial-gradient(circle at 15% 10%,
       rgba(0, 138, 180, 0.05),
-      transparent 35%
-    );
+      transparent 35%);
 }
 
 .curso-wrap {
