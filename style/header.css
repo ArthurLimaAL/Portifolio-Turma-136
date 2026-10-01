@@ -14,21 +14,25 @@ a {
 
 .nav {
     min-height: 82px;
+    padding-block: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 12px clamp(16px, 3vw, 30px);
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 12px;
+    min-width: 0;
 }
 
 .brand img {
-    width: 54px;
-    height: 54px;
+    width: clamp(44px, 6vw, 54px);
+    height: clamp(44px, 6vw, 54px);
+    flex-shrink: 0;
     object-fit: contain;
     border-radius: 50%;
     background: white;
@@ -38,7 +42,8 @@ a {
     display: block;
     font-family: 'Space Grotesk';
     letter-spacing: 1px;
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+    white-space: nowrap;
 }
 
 .brand span {
@@ -48,12 +53,14 @@ a {
 
 nav {
     display: flex;
-    gap: 26px;
+    flex-wrap: wrap;
+    gap: 6px clamp(14px, 2vw, 26px);
 }
 
 nav a {
     color: #cbd9e1;
-    font-size: 1.1rem;
+    font-size: clamp(.95rem, 1.5vw, 1.1rem);
+    padding-block: 6px;
     transition: .25s;
 }
 
@@ -62,7 +69,38 @@ nav a:hover {
 }
 
 @media (max-width: 800px) {
+    .nav {
+        min-height: auto;
+        padding-block: 12px;
+        justify-content: center;
+        gap: 8px;
+    }
+
     nav {
-        display: none;
+        width: 100%;
+        justify-content: center;
+        gap: 4px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        justify-content: space-between;
+        gap: 4px 12px;
+    }
+
+    nav a {
+        font-size: .95rem;
+    }
+}
+
+@media (max-width: 360px) {
+    nav {
+        justify-content: center;
+        gap: 4px 14px;
+    }
+
+    nav a {
+        font-size: .9rem;
     }
 }
