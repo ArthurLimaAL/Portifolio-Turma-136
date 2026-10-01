@@ -8,17 +8,9 @@
   --line: rgba(95, 180, 220, 0.16);
   --yellow: #ffd429;
 
-  --rosa-vivo: #f2055c;
-  --rosa-claro: #f25cbe;
-  --roxo-magenta: #bf04a0;
-  --roxo-escuro: #2a1459;
-
-  /* Apoio - Fundo padrão unificado para o projeto */
   --bg-escuro-1: #161c28;
   --bg-escuro-2: #2a303c;
   --bg-gradiente: linear-gradient(135deg, #161c28 0%, #2a303c 100%);
-
-  /* RGB para usar em sombras com opacidade */
   --rosa-vivo-rgb: 242, 5, 92;
   --rosa-claro-rgb: 242, 92, 190;
   --roxo-magenta-rgb: 191, 4, 160;
