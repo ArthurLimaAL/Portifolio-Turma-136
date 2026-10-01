@@ -13,25 +13,25 @@ a {
 }
 
 .nav {
-    min-height: 82px;
-    padding-block: 10px;
+    min-height: 60px;
+    padding-block: 6px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 12px clamp(16px, 3vw, 30px);
+    gap: 8px clamp(14px, 3vw, 26px);
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     min-width: 0;
 }
 
 .brand img {
-    width: clamp(44px, 6vw, 54px);
-    height: clamp(44px, 6vw, 54px);
+    width: clamp(34px, 5vw, 40px);
+    height: clamp(34px, 5vw, 40px);
     flex-shrink: 0;
     object-fit: contain;
     border-radius: 50%;
@@ -42,25 +42,25 @@ a {
     display: block;
     font-family: 'Space Grotesk';
     letter-spacing: 1px;
-    font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+    font-size: clamp(1rem, 3vw, 1.15rem);
     white-space: nowrap;
 }
 
 .brand span {
     color: var(--muted);
-    font-size: .72rem;
+    font-size: .68rem;
 }
 
 nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px clamp(14px, 2vw, 26px);
+    gap: 4px clamp(12px, 2vw, 22px);
 }
 
 nav a {
     color: #cbd9e1;
-    font-size: clamp(.95rem, 1.5vw, 1.1rem);
-    padding-block: 6px;
+    font-size: clamp(.9rem, 1.5vw, 1rem);
+    padding-block: 4px;
     transition: .25s;
 }
 
@@ -71,9 +71,9 @@ nav a:hover {
 @media (max-width: 800px) {
     .nav {
         min-height: auto;
-        padding-block: 12px;
+        padding-block: 10px;
         justify-content: center;
-        gap: 8px;
+        gap: 6px;
     }
 
     nav {
@@ -90,7 +90,7 @@ nav a:hover {
     }
 
     nav a {
-        font-size: .95rem;
+        font-size: .9rem;
     }
 }
 
@@ -101,6 +101,6 @@ nav a:hover {
     }
 
     nav a {
-        font-size: .9rem;
+        font-size: .85rem;
     }
 }
