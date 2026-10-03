@@ -1,220 +1,255 @@
 .equipe {
-  padding: 60px 20px;
-  min-height: 100vh;
+  background: var(--off-white);
+  padding: clamp(56px, 8vw, 104px) 0;
 }
 
 .equipe-titulo {
-  color: var(--cyan);
-  font-size: 2rem;
   text-align: center;
-  margin-bottom: 40px;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(123, 245, 255, 0.3);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--blue-900);
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
 }
 
-.equipe-grid {
+.equipe-titulo::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 16px auto 0;
+  border-radius: 999px;
+  background: var(--cyan-400);
+}
+
+.professores-container {
+  width: min(calc(100% - 48px), 760px);
+  margin: 48px auto 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.profile-card {
-  background: linear-gradient(135deg, #2a303c 0%, #161c28 100%);
-  padding: 35px 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid rgba(123, 245, 255, 0.1);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.profile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  border-color: rgba(123, 245, 255, 0.3);
-}
-
-.profile-img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #00daeb;
-  box-shadow: 0 0 20px rgba(0, 218, 235, 0.3);
-  margin-bottom: 20px;
-}
-
-.profile-name {
-  color: #7bf5ff;
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 10px rgba(123, 245, 255, 0.3);
-}
-
-.divider {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #00daeb, #7bf5ff, #00a2ac);
-  border-radius: 2px;
-  margin-bottom: 20px;
-}
-
-.social-links {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-.social-links a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 42px;
-  height: 42px;
-  background: linear-gradient(135deg, #5148d7 0%, #3829c0 100%);
-  color: #ffffff;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(81, 72, 215, 0.4);
-}
-
-.social-links a:hover {
-  background: linear-gradient(135deg, #6a63f1 0%, #5148d7 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(106, 99, 241, 0.6);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .professora-card {
-  background: linear-gradient(135deg, #2a303c 0%, #161c28 100%);
-  max-width: 420px;
-  margin: 0 auto 50px;
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid rgba(106, 99, 241, 0.35);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(81, 72, 215, 0.15);
   position: relative;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  background: var(--blue-900);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
 }
 
-.professora-card:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.6),
-    0 0 35px rgba(106, 99, 241, 0.3);
+.professora-card::before {
+  display: none;
 }
 
 .professora-tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #5148d7 0%, #3829c0 100%);
-  color: #ffffff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 6px 16px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(81, 72, 215, 0.4);
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, .10);
+  border: 1px solid rgba(255, 255, 255, .14);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--cyan-300);
+  margin-bottom: 14px;
 }
 
 .professora-card .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #5148d7;
-  box-shadow: 0 0 20px rgba(81, 72, 215, 0.35);
-  margin-bottom: 20px;
+  margin: 0 auto 14px;
+  border: 3px solid rgba(255, 255, 255, .9);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
 }
 
 .professora-card .profile-name {
-  color: #7bf5ff;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 8px;
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 10px rgba(123, 245, 255, 0.3);
+  color: var(--white);
 }
 
-.professores-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto 50px;
-}
-.professora-card {
-  flex: 1 1 380px;
-  max-width: 420px;
-  margin: 0;
-}
-
-.profile-turma {
-  color: #ffffff;
-  opacity: 0.85;
-  font-size: 0.95rem;
+.professora-card .profile-turma {
+  font-size: .85rem;
+  color: var(--cyan-300);
   font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-}
-
-.professora-card .divider {
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, #5148d7, #6a63f1, #5148d7);
-  border-radius: 2px;
-  margin-bottom: 20px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-top: 4px;
 }
 
 .professora-card .profile-desc {
-  color: #7bf5ff;
-  opacity: 0.8;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  padding: 0 10px;
+  margin-top: 10px;
+  font-size: .92rem;
+  color: rgba(255, 255, 255, .78);
+  line-height: 1.5;
 }
 
 .equipe-separador {
+  width: min(calc(100% - 48px), 980px);
+  margin: 48px auto;
   border: none;
   height: 1px;
-  max-width: 900px;
-  margin: 0 auto 40px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(123, 245, 255, 0.3),
-    transparent
-  );
+  background: var(--gray-200);
 }
 
 .equipe-subtitulo {
-  color: #7bf5ff;
-  font-size: 1.4rem;
   text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-  opacity: 0.9;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--blue-800);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  margin-bottom: 20px;
+}
+
+.equipe .equipe-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px 24px 28px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 24px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.equipe .equipe-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-card {
+  flex: 0 0 268px;
+  scroll-snap-align: start;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 22px 18px 18px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(122, 92, 250, .22);
+}
+
+.profile-card .profile-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 14px;
+  border: 3px solid var(--white);
+  box-shadow: 0 6px 18px rgba(15, 35, 64, .12);
+}
+
+.profile-card .profile-name {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--blue-900);
+  line-height: 1.2;
+}
+
+.profile-card .divider {
+  margin: 12px auto;
+  width: 36px;
+  height: 3px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--blue-50);
+  color: var(--blue-800);
+  border: 1px solid var(--gray-200);
+  transition: all .2s ease;
+  font-size: .95rem;
+}
+
+.social-links a:hover {
+  background: var(--blue-900);
+  color: var(--white);
+  border-color: var(--blue-900);
+  transform: translateY(-1px);
+}
+
+.social-links a:nth-child(2):hover {
+  background: var(--purple-600);
+  border-color: transparent;
+}
+
+.turma-carousel-wrap {
+  width: min(calc(100% - 48px), var(--max-w));
+  margin: 0 auto;
+  position: relative;
+}
+
+.turma-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.carousel-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--blue-900);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all .2s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--blue-900);
+  color: var(--white);
+  border-color: var(--blue-900);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.equipe-grid {
+  cursor: grab;
+}
+
+.equipe-grid:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 640px) {
+  .professores-container {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    flex-basis: 76%;
+  }
 }

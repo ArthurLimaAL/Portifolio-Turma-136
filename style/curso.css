@@ -1,254 +1,239 @@
 .curso {
-  padding: 80px 20px;
-  background:
-    radial-gradient(circle at 15% 10%,
-      rgba(0, 138, 180, 0.05),
-      transparent 35%);
+  background: var(--blue-900);
+  color: var(--white);
+  padding: clamp(56px, 8vw, 96px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.curso::before {
+  content: "";
+  position: absolute;
+  inset: -120px -200px auto auto;
+  width: 560px;
+  height: 560px;
+  display: none;
 }
 
 .curso-wrap {
-  max-width: 1200px;
+  width: min(calc(100% - 48px), var(--max-w));
   margin: 0 auto;
+  position: relative;
 }
 
 .curso-header {
-  text-align: center;
-  max-width: 820px;
-  margin: 0 auto 50px;
+  max-width: 760px;
 }
 
 .curso-tag {
-  color: var(--cyan);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(45, 224, 200, .12);
+  border: 1px solid rgba(45, 224, 200, .22);
+  color: var(--cyan-300);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
 }
 
 .curso-titulo {
-  color: var(--cyan);
-  font-size: 2rem;
-  margin: 10px 0 18px;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(123, 245, 255, 0.3);
+  margin-top: 14px;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: .95;
 }
 
 .curso-intro {
-  color: var(--muted);
-  font-size: 1.02rem;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .curso-intro strong {
   color: var(--white);
 }
 
-/* ---------- Números ---------- */
 .curso-stats {
+  margin-top: 36px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .stat-card {
-  background: linear-gradient(135deg, #2a303c 0%, #161c28 100%);
-  border: 1px solid rgba(123, 245, 255, 0.1);
-  border-radius: 15px;
-  padding: 28px 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  border-color: rgba(123, 245, 255, 0.3);
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  backdrop-filter: blur(6px);
 }
 
 .stat-card i {
-  color: #00daeb;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--cyan-400);
   margin-bottom: 10px;
+  display: block;
 }
 
 .stat-card strong {
   display: block;
-  color: #7bf5ff;
-  font:
-    700 1.9rem/1.2 "Space Grotesk",
-    "Inter",
-    sans-serif;
-  text-shadow: 0 0 10px rgba(123, 245, 255, 0.3);
+  font-family: 'Sora', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .stat-card span {
-  color: var(--muted);
-  font-size: 0.85rem;
+  display: block;
+  margin-top: 6px;
+  font-size: .82rem;
+  color: rgba(255, 255, 255, .66);
 }
 
-/* ---------- Características ---------- */
 .curso-info {
+  margin-top: 36px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 70px;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 18px;
 }
 
-.info-card {
-  background: linear-gradient(135deg, #2a303c 0%, #161c28 100%);
-  border: 1px solid rgba(106, 99, 241, 0.35);
-  border-radius: 15px;
-  padding: 32px 28px;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(81, 72, 215, 0.15);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+.info-card,
+.requisitos-card {
+  background: var(--white);
+  color: var(--gray-900);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(15, 35, 64, .06);
 }
 
-.info-card:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.6),
-    0 0 35px rgba(106, 99, 241, 0.3);
-}
-
-.info-tag {
+.info-tag,
+.requisitos-tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, #5148d7 0%, #3829c0 100%);
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 6px 16px;
-  border-radius: 20px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 15px rgba(81, 72, 215, 0.4);
+  gap: 6px;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  color: var(--purple-600);
+  background: var(--purple-50);
+  border: 1px solid #E0D9FF;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
 }
 
-.info-card .divider {
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, #5148d7, #6a63f1, #5148d7);
-  border-radius: 2px;
-  margin-bottom: 18px;
+.info-card .divider,
+.requisitos-card .divider {
+  margin: 14px 0 14px 0;
 }
 
 .info-card p {
-  color: #cbd9e1;
-  font-size: 0.95rem;
-  margin-bottom: 12px;
+  color: var(--gray-700);
+  font-size: .95rem;
 }
 
-.info-list {
-  list-style: none;
+.info-card p+p {
+  margin-top: 10px;
 }
 
-.info-list li {
+.requisitos-card ul {
+  margin-top: 8px;
+  display: grid;
+  gap: 10px;
+}
+
+.requisitos-card li {
   display: flex;
   gap: 10px;
-  color: #cbd9e1;
-  font-size: 0.95rem;
-  padding: 6px 0;
+  align-items: flex-start;
+  font-size: .92rem;
+  color: var(--gray-700);
 }
 
-.info-list li i {
-  color: #00daeb;
-  margin-top: 5px;
-  font-size: 0.8rem;
+.requisitos-card li i {
+  color: var(--cyan-400);
+  margin-top: 3px;
 }
 
-/* ---------- Grade curricular ---------- */
 .grade-titulo {
-  color: #7bf5ff;
-  font-size: 1.4rem;
-  text-align: center;
-  letter-spacing: 1px;
-  opacity: 0.9;
-  margin-bottom: 8px;
+  margin-top: 56px;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .grade-sub {
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 30px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, .68);
+  font-size: .95rem;
 }
 
 .grade-grid {
+  margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .uc-card {
-  position: relative;
-  background: linear-gradient(135deg, #2a303c 0%, #161c28 100%);
-  border: 1px solid rgba(123, 245, 255, 0.1);
-  border-radius: 15px;
-  padding: 30px 25px 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: transform .2s ease, background .2s ease;
 }
 
 .uc-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  border-color: rgba(123, 245, 255, 0.3);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, .09);
+}
+
+.uc-card.destaque {
+  background: var(--blue-700);
+  border-color: rgba(45, 224, 200, .28);
 }
 
 .uc-num {
-  align-self: flex-start;
-  background: linear-gradient(135deg, #5148d7 0%, #3829c0 100%);
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 5px 14px;
-  border-radius: 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 15px rgba(81, 72, 215, 0.4);
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: .70rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  background: var(--white);
+  color: var(--blue-900);
 }
 
 .uc-nome {
-  color: #7bf5ff;
-  font-size: 1.1rem;
-  font-weight: 700;
+  margin-top: 10px;
+  font-size: .95rem;
+  font-weight: 600;
   line-height: 1.35;
-  margin-bottom: 18px;
-  flex: 1;
-  text-shadow: 0 0 10px rgba(123, 245, 255, 0.25);
+  min-height: 2.7em;
 }
 
 .uc-horas {
-  display: flex;
+  margin-top: 12px;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: var(--white);
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 10px;
-}
-
-.uc-horas i {
-  color: #00daeb;
+  gap: 6px;
+  font-size: .78rem;
+  color: var(--cyan-300);
+  background: rgba(0, 0, 0, .22);
+  padding: 4px 8px;
+  border-radius: 999px;
 }
 
 .uc-barra {
+  margin-top: 12px;
   height: 6px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, .12);
+  border-radius: 999px;
   overflow: hidden;
 }
 
@@ -256,30 +241,37 @@
   display: block;
   height: 100%;
   width: var(--w);
-  border-radius: 3px;
-  background: linear-gradient(90deg, #00daeb, #7bf5ff, #00a2ac);
-}
-
-.uc-card.destaque {
-  border-color: rgba(106, 99, 241, 0.5);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.4),
-    0 0 25px rgba(81, 72, 215, 0.2);
+  background: var(--cyan-400);
+  border-radius: 999px;
 }
 
 .grade-total {
-  margin-top: 40px;
-  text-align: center;
-  color: var(--muted);
+  margin-top: 18px;
+  text-align: right;
+  color: rgba(255, 255, 255, .72);
+  font-size: .9rem;
 }
 
 .grade-total strong {
-  color: #7bf5ff;
-  font-size: 1.2rem;
+  color: var(--white);
 }
 
-@media (max-width: 600px) {
-  .curso {
-    padding: 60px 16px;
+@media (max-width: 960px) {
+  .curso-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .curso-info {
+    grid-template-columns: 1fr;
+  }
+
+  .grade-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grade-grid {
+    grid-template-columns: 1fr;
   }
 }
