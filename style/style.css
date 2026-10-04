@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
 
 :root {
+  --blue-950: #061122;
   --blue-900: #0F2340;
   --blue-800: #16325E;
   --blue-700: #1E3D73;
   --blue-50: #EEF2FB;
 
+  --cyan-600: #1d8173;
   --cyan-400: #2DE0C8;
   --cyan-300: #5CF0DB;
   --cyan-50: #E6FCF8;

@@ -1,6 +1,6 @@
 .footer-section {
-    background: var(--blue-900);
-    color: var(--white);
+    background: var(--blue-950);
+    color: var(--gray-100);
     padding-top: 48px;
     border-top: 1px solid rgba(255, 255, 255, .08);
 }
@@ -32,7 +32,7 @@
 .footer .description {
     margin-top: 12px;
     max-width: 48ch;
-    color: rgba(255, 255, 255, .68);
+    color: rgb(255, 253, 253);
     font-size: .95rem;
 }
 

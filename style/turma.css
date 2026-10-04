@@ -1,5 +1,5 @@
 .equipe {
-  background: var(--off-white);
+  background: var(--blue-950);
   padding: clamp(56px, 8vw, 104px) 0;
 }
 

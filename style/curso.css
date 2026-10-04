@@ -1,5 +1,5 @@
 .curso {
-  background: var(--blue-900);
+  background: var(--blue-950);
   color: var(--white);
   padding: clamp(56px, 8vw, 96px) 0;
   position: relative;
@@ -27,11 +27,11 @@
 
 .curso-tag {
   display: inline-flex;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: var(--radius-pill);
-  background: rgba(45, 224, 200, .12);
-  border: 1px solid rgba(45, 224, 200, .22);
-  color: var(--cyan-300);
+  background: rgba(45, 224, 200, .10);
+  border: 1px solid rgba(45, 224, 200, .20);
+  color: var(--cyan-400);
   font-size: .72rem;
   font-weight: 800;
   letter-spacing: .14em;
@@ -39,22 +39,33 @@
 }
 
 .curso-titulo {
-  margin-top: 14px;
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  font-weight: 800;
+  max-width: 860px;
+  margin-top: 16px;
+  display: block;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  width: fit-content;
+  font-weight: 900;
   text-transform: uppercase;
   line-height: .95;
+  letter-spacing: -0.03em;
+  background: var(--cyan-400);
+  color: var(--blue-950);
+  padding: 10px 14px 8px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .curso-intro {
-  margin-top: 14px;
-  color: rgba(255, 255, 255, .78);
+  margin-top: 18px;
+  color: rgba(255, 255, 255, .74);
   font-size: 1.05rem;
   line-height: 1.6;
+  max-width: 68ch;
 }
 
 .curso-intro strong {
   color: var(--white);
+  font-weight: 700;
 }
 
 .curso-stats {
@@ -85,6 +96,7 @@
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1;
+  color: var(--white);
 }
 
 .stat-card span {
@@ -103,12 +115,12 @@
 
 .info-card,
 .requisitos-card {
-  background: var(--white);
-  color: var(--gray-900);
+  background: rgba(255, 255, 255, .05);
+  color: var(--gray-100);
   border-radius: var(--radius-lg);
   padding: 24px;
   box-shadow: var(--shadow-md);
-  border: 1px solid rgba(15, 35, 64, .06);
+  border: 1px solid rgba(255, 255, 255, .08);
 }
 
 .info-tag,
@@ -120,9 +132,9 @@
   font-weight: 800;
   letter-spacing: .10em;
   text-transform: uppercase;
-  color: var(--purple-600);
-  background: var(--purple-50);
-  border: 1px solid #E0D9FF;
+  color: var(--cyan-600);
+  background: var(--cyan-300);
+  border: 1px solid #d9fff5;
   padding: 6px 10px;
   border-radius: var(--radius-pill);
 }
@@ -130,10 +142,11 @@
 .info-card .divider,
 .requisitos-card .divider {
   margin: 14px 0 14px 0;
+  background: var(--cyan-400);
 }
 
 .info-card p {
-  color: var(--gray-700);
+  color: var(--gray-100);
   font-size: .95rem;
 }
 
@@ -152,7 +165,7 @@
   gap: 10px;
   align-items: flex-start;
   font-size: .92rem;
-  color: var(--gray-700);
+  color: var(--gray-100);
 }
 
 .requisitos-card li i {
@@ -165,11 +178,12 @@
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 800;
   text-transform: uppercase;
+  color: var(--white);
 }
 
 .grade-sub {
   margin-top: 8px;
-  color: rgba(255, 255, 255, .68);
+  color: rgba(255, 255, 255, .62);
   font-size: .95rem;
 }
 
@@ -215,6 +229,7 @@
   font-weight: 600;
   line-height: 1.35;
   min-height: 2.7em;
+  color: var(--white);
 }
 
 .uc-horas {
@@ -248,12 +263,12 @@
 .grade-total {
   margin-top: 18px;
   text-align: right;
-  color: rgba(255, 255, 255, .72);
+  color: rgb(255, 255, 255);
   font-size: .9rem;
 }
 
 .grade-total strong {
-  color: var(--white);
+  color: var(--cyan-300);
 }
 
 @media (max-width: 960px) {
@@ -273,5 +288,10 @@
 @media (max-width: 560px) {
   .grade-grid {
     grid-template-columns: 1fr;
+  }
+
+  .curso-titulo {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+    padding: 8px 10px 6px;
   }
 }
