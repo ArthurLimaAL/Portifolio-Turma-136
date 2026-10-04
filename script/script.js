@@ -1,5 +1,10 @@
+/* =========================================================
+   TURMA 136 - SCRIPT PRINCIPAL
+   ========================================================= */
 
-/* Menu mobile - hamburguer */
+/* ---------------------------------------------------------
+   1. MENU MOBILE - HAMBÚRGUER
+   --------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('menuToggle');
     const nav = document.getElementById('mainNav');
@@ -40,7 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* Turma 136 - Carrossel de alunos - JS limpo, sem poluição */
+
+/* ---------------------------------------------------------
+   2. CARROSSEL DE ALUNOS - COM LOOP
+   --------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.equipe-grid');
     if (!grid) return;
@@ -58,10 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const controls = document.createElement('div');
     controls.className = 'turma-carousel-controls';
     controls.innerHTML = `
-    <button class="carousel-btn prev" aria-label="Anterior"><i class="fa-solid fa-arrow-left"></i></button>
-    <div class="carousel-dots" role="tablist"></div>
-    <button class="carousel-btn next" aria-label="Próximo"><i class="fa-solid fa-arrow-right"></i></button>
-  `;
+        <button class="carousel-btn prev" aria-label="Anterior"><i class="fa-solid fa-arrow-left"></i></button>
+        <div class="carousel-dots" role="tablist"></div>
+        <button class="carousel-btn next" aria-label="Próximo"><i class="fa-solid fa-arrow-right"></i></button>
+    `;
     wrap.appendChild(controls);
 
     const prevBtn = controls.querySelector('.prev');
@@ -69,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = controls.querySelector('.carousel-dots');
 
     const cards = [...grid.children];
-    const cardWidth = () => cards[0]?.offsetWidth + 20; // gap
+    const cardWidth = () => cards[0]?.offsetWidth + 20; // largura + gap
 
     // Dots = páginas visíveis
     const updateDots = () => {
@@ -90,19 +98,36 @@ document.addEventListener('DOMContentLoaded', () => {
         [...dotsContainer.children].forEach((d, i) => d.classList.toggle('active', i === idx));
     };
 
+    // Detecta início/fim do scroll para o loop
+    const isAtStart = () => grid.scrollLeft <= 2;
+    const isAtEnd = () => grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 2;
+
+    // Setas com LOOP: do último volta pro primeiro e do primeiro vai pro último
     prevBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: -cardWidth() * 2, behavior: 'smooth' });
+        if (isAtStart()) {
+            // Está no primeiro → vai para o último
+            grid.scrollTo({ left: grid.scrollWidth - grid.clientWidth, behavior: 'smooth' });
+        } else {
+            grid.scrollBy({ left: -cardWidth() * 2, behavior: 'smooth' });
+        }
     });
+
     nextBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: cardWidth() * 2, behavior: 'smooth' });
+        if (isAtEnd()) {
+            // Está no último → volta para o primeiro
+            grid.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            grid.scrollBy({ left: cardWidth() * 2, behavior: 'smooth' });
+        }
     });
 
     grid.addEventListener('scroll', updateActiveDot, { passive: true });
 
-    // Drag to scroll
+    // Drag to scroll (arrastar com o mouse)
     let isDown = false, startX, scrollLeft;
     grid.addEventListener('mousedown', (e) => {
-        isDown = true; grid.classList.add('dragging');
+        isDown = true;
+        grid.classList.add('dragging');
         startX = e.pageX - grid.offsetLeft;
         scrollLeft = grid.scrollLeft;
     });
@@ -116,28 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         grid.scrollLeft = scrollLeft - walk;
     });
 
-    // Autoplay suave (pausa no hover)
-    let autoplay = setInterval(() => {
-        if (grid.matches(':hover')) return;
-        if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 10) {
-            grid.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            grid.scrollBy({ left: cardWidth(), behavior: 'smooth' });
-        }
-    }, 4200);
-
-    grid.addEventListener('mouseenter', () => clearInterval(autoplay));
-    grid.addEventListener('mouseleave', () => {
-        autoplay = setInterval(() => {
-            if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 10) {
-                grid.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                grid.scrollBy({ left: cardWidth(), behavior: 'smooth' });
-            }
-        }, 4200);
-    });
-
-    // Inicial
+    // Inicializa os pontinhos e recalcula ao redimensionar a tela
     updateDots();
     window.addEventListener('resize', updateDots);
 });
