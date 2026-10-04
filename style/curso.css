@@ -96,7 +96,7 @@
   font-size: 1.25rem;
   font-weight: 800;
   line-height: 1;
-  color: var(--white);
+  color: var(--cyan-300);
 }
 
 .stat-card span {
@@ -132,7 +132,7 @@
   font-weight: 800;
   letter-spacing: .10em;
   text-transform: uppercase;
-  color: var(--cyan-600);
+  color: var(--cyan-900);
   background: var(--cyan-300);
   border: 1px solid #d9fff5;
   padding: 6px 10px;
