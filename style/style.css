@@ -55,7 +55,9 @@
 }
 
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  scroll-padding-top: var(--header-h)
 }
 
 body {
@@ -64,6 +66,7 @@ body {
   color: var(--gray-100);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  padding-top: var(--header-h);
 }
 
 img {
