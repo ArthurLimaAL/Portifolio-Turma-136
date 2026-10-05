@@ -1,0 +1,217 @@
+.projetos {
+  background: var(--blue-950);
+  padding: clamp(56px, 8vw, 104px) 0 clamp(64px, 9vw, 112px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.projetos-wrap {
+  width: min(calc(100% - 48px), var(--max-w));
+  margin: 0 auto;
+}
+
+.projetos-titulo {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 14px 8px;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--blue-950);
+  background: var(--cyan-400);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.projetos-bloco {
+  margin-top: clamp(56px, 8vw, 88px);
+}
+
+.projetos-subtitulo {
+  text-align: center;
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.projetos-subtitulo::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 16px auto 0;
+  border-radius: 999px;
+  background: var(--cyan-400);
+}
+
+.pi-lista {
+  margin-top: 48px;
+}
+
+.pi-item {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pi-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.pi-item:last-child {
+  padding-bottom: 0;
+}
+
+.pi-nome {
+  margin-bottom: 28px;
+  font-family: "Sora", "Inter", sans-serif;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--cyan-400);
+}
+
+.pi-fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.pi-fotos img,
+.bingo-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--blue-900);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    filter 0.22s ease;
+}
+
+.pi-fotos img:hover,
+.bingo-grid img:hover {
+  transform: translateY(-2px);
+  border-color: rgba(45, 224, 200, 0.22);
+  filter: brightness(1.05);
+}
+
+.bingo-grid {
+  max-width: 1100px;
+  margin: 48px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.bingo-grid img {
+  flex: 0 0 calc((100% - 36px) / 3);
+  width: auto;
+  max-width: calc((100% - 36px) / 3);
+}
+
+.projetos-uc1 {
+  max-width: 1100px;
+  margin: 48px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.projetos-uc1 .projetos-subtitulo {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.projetos-uc1 .projetos-subtitulo::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 14px auto 22px;
+  border-radius: 999px;
+  background: var(--cyan-400);
+}
+
+.projetos-uc1 img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: none;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    filter 0.22s ease;
+}
+
+.projetos-uc1 img:hover {
+  transform: translateY(-3px);
+  border-color: rgba(45, 224, 200, 0.22);
+  filter: brightness(1.05);
+}
+
+.projetos-uc1 img:last-of-type:nth-of-type(3n + 1) {
+  grid-column: 2 / 3;
+}
+
+.projetos-uc1 img:nth-last-of-type(2):nth-of-type(3n + 1) {
+  grid-column: 1 / 2;
+  grid-column-start: 1;
+}
+.projetos-uc1 img:nth-last-of-type(1):nth-of-type(3n + 2) {
+  grid-column: 2 / 3;
+}
+
+@media (max-width: 980px) {
+  .bingo-grid img {
+    flex-basis: calc((100% - 18px) / 2);
+    max-width: calc((100% - 18px) / 2);
+  }
+  .projetos-uc1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projetos-uc1 img:last-of-type:nth-of-type(3n + 1) {
+    grid-column: auto;
+  }
+  .projetos-uc1 img:nth-last-of-type(2):nth-of-type(3n + 1),
+  .projetos-uc1 img:nth-last-of-type(1):nth-of-type(3n + 2) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .pi-fotos {
+    grid-template-columns: 1fr;
+  }
+  .pi-item {
+    padding: 44px 0;
+  }
+  .bingo-grid img {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .projetos-uc1 {
+    grid-template-columns: 1fr;
+  }
+}
