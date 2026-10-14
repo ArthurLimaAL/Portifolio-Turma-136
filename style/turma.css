@@ -255,3 +255,111 @@
     flex-basis: 76%
   }
 }
+
+/* Destaques dos alunos por Unidade Curricular */
+.alunos-destaques {
+  padding: clamp(52px, 7vw, 88px) 24px;
+  background: linear-gradient(180deg, var(--blue-950), #071b2b);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.destaques-container {
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+
+.destaques-titulo {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.destaques-intro {
+  margin: 12px 0 28px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.uc-destaques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 18px;
+}
+
+.uc-destaque-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.2);
+}
+
+.uc-destaque-card h3 {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: var(--cyan-400);
+  color: var(--blue-950);
+  font-size: .9rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.uc-alunos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  gap: 16px 10px;
+}
+
+.uc-aluno {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  color: var(--white);
+  text-align: center;
+  font-size: .88rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.uc-aluno img {
+  width: 76px;
+  height: 76px;
+  border: 3px solid rgba(45, 224, 200, 0.55);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.28);
+}
+
+.uc-a-definir {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-weight: 600;
+}
+
+.uc-a-definir i {
+  color: var(--cyan-300);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 640px) {
+  .alunos-destaques {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .uc-destaque-card {
+    padding: 18px;
+  }
+}
