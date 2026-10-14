@@ -1,10 +1,3 @@
-/* =========================================================
-   TURMA 136 - SCRIPT PRINCIPAL
-   ========================================================= */
-
-/* ---------------------------------------------------------
-   1. MENU MOBILE - HAMBÚRGUER
-   --------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById('menuToggle');
     const nav = document.getElementById('mainNav');
